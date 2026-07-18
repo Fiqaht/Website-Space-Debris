@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Shield: Space Clean-up</title>
+
+    <!-- Bootstrap file supplied in the question -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Our own design file -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="container py-3 py-lg-4">
+        <!-- HEADER -->
+        <header class="game-header text-center mb-3">
+            <div class="d-flex justify-content-center align-items-center gap-3">
+                <img src="images/paddle_satelite.png.png" alt="Satellite logo" class="header-logo">
+                <div>
+                    <h1 class="mb-0">ECO-SHIELD</h1>
+                    <p class="mb-0">Space Clean-up Mission</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="row g-3">
+            <!-- INFORMATION BOARD -->
+            <aside class="col-lg-3 order-2 order-lg-1">
+                <section class="info-panel h-100">
+                    <h2 class="panel-title">Information Board</h2>
+
+                    <label for="nameInput" class="form-label">Player Name</label>
+                    <div class="input-group mb-3">
+                        <input type="text" id="nameInput" class="form-control" value="Enter Your Name" maxlength="20">
+                        <button id="saveNameBtn" class="btn btn-primary" type="button">Save</button>
+                    </div>
+
+                    <div class="stat-box">
+                        <span>Player</span>
+                        <strong id="playerName">----</strong>
+                    </div>
+
+                    <div class="stat-box">
+                        <span>Score</span>
+                        <strong id="score">0</strong>
+                    </div>
+
+                    <div class="stat-box">
+                        <span>Highest Score</span>
+                        <strong id="highScore">0</strong>
+                    </div>
+
+                    <div class="stat-box">
+                        <span>Lives</span>
+                        <div id="lives" class="lives-box" aria-label="Remaining lives"></div>
+                    </div>
+
+                    <div class="legend mt-3">
+                        <p class="mb-1"><span class="legend-colour green"></span> Green = 10 points</p>
+                        <p class="mb-0"><span class="legend-colour red"></span> Red = 20 points</p>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- GAME AREA -->
+            <section class="col-lg-9 order-1 order-lg-2">
+                <div class="game-card">
+                    <div class="canvas-wrap">
+                        <canvas id="gameCanvas" width="960" height="560">
+                            Your browser does not support HTML5 Canvas.
+                        </canvas>
+
+                        <div id="messageBox" class="message-box">
+                            <h2 id="messageTitle">Ready for Mission?</h2>
+                            <p id="messageText">Click Start or press Space.</p>
+                        </div>
+                    </div>
+
+                    <div class="control-panel d-flex flex-wrap justify-content-center gap-2 mt-3">
+                        <button id="startBtn" type="button" class="btn btn-success px-4">Start</button>
+                        <button id="resetBtn" type="button" class="btn btn-outline-light px-4">Reset</button>
+                    </div>
+
+                    <!-- Tablet/mobile buttons -->
+                    <div class="touch-controls mt-3">
+                        <button id="leftBtn" type="button" class="btn btn-secondary control-button">← Left</button>
+                        <button id="rightBtn" type="button" class="btn btn-secondary control-button">Right →</button>
+                    </div>
+
+                    <p class="instruction-text text-center mt-3 mb-0">
+                        Use <strong>←</strong> and <strong>→</strong> arrow keys to move the satellite.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- JavaScript libraries and game logic are kept in separate files -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
